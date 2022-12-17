@@ -1,5 +1,5 @@
 FROM  centos:latest
-LABEL henry="ikehenrypro@gmail.com"
+MAINTAINER ikehenrypro@gmail.com
 RUN dnf install httpd -y
 RUN dnf install zip -y
 RUN dnf install unzip -y
