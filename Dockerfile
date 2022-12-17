@@ -1,7 +1,7 @@
 FROM httpd:2.4
 LABEL Henry=ikehenrypro@gmail.com
-RUN yum install zip -y
-RUN yum install unzip -y
+RUN apk install zip -y
+RUN apk install unzip -y
 ADD https://www.free-css.com/assets/files/free-css-templates/download/page254/photogenic.zip /var/www/html/
 WORKDIR /var/www/html/
 RUN unzip photogenic.zip
