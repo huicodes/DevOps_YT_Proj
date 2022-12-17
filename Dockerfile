@@ -1,7 +1,21 @@
-FROM httpd:2.4
+# FROM httpd:2.4
+# LABEL Henry=ikehenrypro@gmail.com
+# RUN apk install zip -y
+# RUN apk install unzip -y
+# ADD https://www.free-css.com/assets/files/free-css-templates/download/page254/photogenic.zip /var/www/html/
+# WORKDIR /var/www/html/
+# RUN unzip photogenic.zip
+# RUN cp -rvf photogenic/* .
+# RUN rm -rf photogenic photogenic.zip
+# CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
+# EXPOSE 80
+
+
+
+
+FROM  centos:latest
 LABEL Henry=ikehenrypro@gmail.com
-RUN apk install zip -y
-RUN apk install unzip -y
+RUN yum update -y && yum install -y httpd zip unzip
 ADD https://www.free-css.com/assets/files/free-css-templates/download/page254/photogenic.zip /var/www/html/
 WORKDIR /var/www/html/
 RUN unzip photogenic.zip
@@ -9,22 +23,6 @@ RUN cp -rvf photogenic/* .
 RUN rm -rf photogenic photogenic.zip
 CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
 EXPOSE 80
-
-
-
-
-#FROM  centos:latest
-#LABEL Henry=ikehenrypro@gmail.com
-#RUN yum install httpd -y
-#RUN yum install zip -y
-#RUN yum install unzip -y
-#ADD https://www.free-css.com/assets/files/free-css-templates/download/page254/photogenic.zip /var/www/html/
-#WORKDIR /var/www/html/
-#RUN unzip photogenic.zip
-#RUN cp -rvf photogenic/* .
-#RUN rm -rf photogenic photogenic.zip
-#CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
-#EXPOSE 80
  
  
 # FROM  centos:latest
