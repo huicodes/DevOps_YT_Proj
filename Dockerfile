@@ -1,5 +1,4 @@
 FROM httpd:2.4
-COPY ./public-html/ /usr/local/apache2/htdocs/
 LABEL Henry=ikehenrypro@gmail.com
 RUN yum install zip -y
 RUN yum install unzip -y
